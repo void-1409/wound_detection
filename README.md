@@ -34,27 +34,33 @@ Offline Installation
 To use the model for offline detection, follow these steps:
 
 1.  Close the Repository
-```bash
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 git clone https://github.com/void-1409/wound_detection
 cd wound_detection
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2.  Install virtualenv package and create a python virtual environment and activate it.
-```bash
+1.  Install virtualenv package and create a python virtual environment and
+    activate it.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 pip install virtualenv
 virtualenv venv
 venv\Scripts\activate
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.  Install Dependencies
-```bash
+1.  Install Dependencies
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 pip install -r requirements.txt
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4.  Run the detection
-```bash
+1.  Run the detection
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 yolo task=detect mode=predict model=best.pt conf=0.7 source="/test/images"
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Note: change the path of `source` in above line to your image dataset to test.
 
  
@@ -68,6 +74,28 @@ images, with two classes.
 -   **Wound Class:** labelled as `wound`.
 
 -   **Reference Class:** labelled as `reference`.
+
+ 
+
+Results
+-------
+
+The results of final detection of trained models are stored in `runs/detect`
+directory, with bounding box drawn around the detected wounds and reference
+images.
+
+ 
+
+Here is one example of prediction of an image from the test dataset:
+
+![Wound and Reference detection in test
+image](./runs/detect/predict/ALFONSOIMG522.jpg)
+
+ 
+
+Also, here are the results from training:
+
+![Training Results](./runs/detect/train/results.png)
 
  
 
