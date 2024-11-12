@@ -61,13 +61,16 @@ pip install -r requirements.txt
 yolo task=detect mode=predict model=best.pt conf=0.7 source="/test/images"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note: change the path of `source` in above line to your image dataset to test.
+*Note:* change the path of `source` in above line to your image dataset to test.
 
 5. Run the live detection using your webcam
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 yolo task=detect mode=predict model=best.pt conf=0.7 source=0 show=True save=False
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
+*Note:* `source=0` here means it takes your camera as input and shows live video feed. 
+`show=True` displays the live detection, and turning this to False will not display any video feed.
+`save=False` is used to not save the whole live video. If you want the full video to be saved to your system, then change this to True.
+
 
 Dataset
 -------
