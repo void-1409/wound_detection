@@ -40,7 +40,7 @@ git clone https://github.com/void-1409/wound_detection
 cd wound_detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Install virtualenv package and create a python virtual environment and
+2.  Install virtualenv package and create a python virtual environment and
     activate it.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
@@ -49,13 +49,13 @@ virtualenv venv
 venv\Scripts\activate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Install Dependencies
+3.  Install Dependencies
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 pip install -r requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Run the detection
+4.  Run the detection
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 yolo task=detect mode=predict model=best.pt conf=0.7 source="/test/images"
@@ -63,6 +63,10 @@ yolo task=detect mode=predict model=best.pt conf=0.7 source="/test/images"
 
 Note: change the path of `source` in above line to your image dataset to test.
 
+5. Run the live detection using your webcam
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
+yolo task=detect mode=predict model=best.pt conf=0.7 source=0 show=True save=False
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 
 Dataset
